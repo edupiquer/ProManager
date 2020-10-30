@@ -6,11 +6,8 @@ using System.Text;
 
 namespace ProManager.Core.Models
 {
-    public class Team
+    public class Team : DomainObject
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
         [MaxLength(length:100)]
         public string Name { get; set; }
         public List<Coach> Coaches { get; set; }

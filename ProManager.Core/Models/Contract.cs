@@ -6,11 +6,8 @@ using System.Text;
 
 namespace ProManager.Core.Models
 {
-    public class Contract
+    public class Contract : DomainObject
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
         public Person Person { get; set; }
         public Team Team { get; set; }
         public int Duration { get; set; }

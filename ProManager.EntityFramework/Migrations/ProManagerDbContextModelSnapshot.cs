@@ -21,18 +21,19 @@ namespace ProManager.EntityFramework.Migrations
 
             modelBuilder.Entity("ProManager.Core.Models.Coach", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<Guid?>("ContractId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ContractId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("PersonId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("PersonId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("TeamId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("TeamId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -50,18 +51,19 @@ namespace ProManager.EntityFramework.Migrations
 
             modelBuilder.Entity("ProManager.Core.Models.Contract", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("PersonId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("PersonId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("TeamId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("TeamId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Value")
                         .HasColumnType("int");
@@ -77,24 +79,22 @@ namespace ProManager.EntityFramework.Migrations
 
             modelBuilder.Entity("ProManager.Core.Models.Person", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecondLastName")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -103,24 +103,25 @@ namespace ProManager.EntityFramework.Migrations
 
             modelBuilder.Entity("ProManager.Core.Models.Player", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<Guid?>("ContractId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ContractId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Duty")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("PersonId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("PersonId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Position")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("TeamId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("TeamId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -135,9 +136,10 @@ namespace ProManager.EntityFramework.Migrations
 
             modelBuilder.Entity("ProManager.Core.Models.Team", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(100)")

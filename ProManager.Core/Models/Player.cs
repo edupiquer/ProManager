@@ -27,9 +27,8 @@ namespace ProManager.Core.Models
         Winger
     }
 
-    public class Player
+    public class Player : DomainObject
     {
-        public Guid Id { get; set; }
         public Person Person { get; set; }
         public Team Team { get; set; }
         public Contract Contract { get; set; }

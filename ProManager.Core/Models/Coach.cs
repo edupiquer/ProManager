@@ -12,9 +12,8 @@ namespace ProManager.Core.Models
         Mental,
         Nutritionist
     }
-    public class Coach
+    public class Coach : DomainObject
     {
-        public Guid Id { get; set; }
         public Person Person { get; set; }
         public Team Team { get; set; }
         public Contract Contract { get; set; }

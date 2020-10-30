@@ -11,10 +11,11 @@ namespace ProManager.EntityFramework.Migrations
                 name: "People",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(maxLength: 100, nullable: true),
-                    LastName = table.Column<string>(maxLength: 100, nullable: true),
-                    SecondLastName = table.Column<string>(maxLength: 100, nullable: true),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    SecondLastName = table.Column<string>(nullable: true),
                     DateOfBirth = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -26,7 +27,8 @@ namespace ProManager.EntityFramework.Migrations
                 name: "Teams",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 100, nullable: true)
                 },
                 constraints: table =>
@@ -38,9 +40,10 @@ namespace ProManager.EntityFramework.Migrations
                 name: "Contracts",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    PersonId = table.Column<Guid>(nullable: true),
-                    TeamId = table.Column<Guid>(nullable: true),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<int>(nullable: true),
+                    TeamId = table.Column<int>(nullable: true),
                     Duration = table.Column<int>(nullable: false),
                     Value = table.Column<int>(nullable: false)
                 },
@@ -65,10 +68,11 @@ namespace ProManager.EntityFramework.Migrations
                 name: "Coaches",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    PersonId = table.Column<Guid>(nullable: true),
-                    TeamId = table.Column<Guid>(nullable: true),
-                    ContractId = table.Column<Guid>(nullable: true),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<int>(nullable: true),
+                    TeamId = table.Column<int>(nullable: true),
+                    ContractId = table.Column<int>(nullable: true),
                     Type = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -98,10 +102,11 @@ namespace ProManager.EntityFramework.Migrations
                 name: "Players",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    PersonId = table.Column<Guid>(nullable: true),
-                    TeamId = table.Column<Guid>(nullable: true),
-                    ContractId = table.Column<Guid>(nullable: true),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<int>(nullable: true),
+                    TeamId = table.Column<int>(nullable: true),
+                    ContractId = table.Column<int>(nullable: true),
                     Position = table.Column<int>(nullable: false),
                     Duty = table.Column<int>(nullable: false)
                 },
