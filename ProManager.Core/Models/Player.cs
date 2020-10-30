@@ -27,8 +27,12 @@ namespace ProManager.Core.Models
         Winger
     }
 
-    public class Player : Staff
+    public class Player
     {
+        public Guid Id { get; set; }
+        public Person Person { get; set; }
+        public Team Team { get; set; }
+        public Contract Contract { get; set; }
         public Position Position { get; set; }
         public PlayerDuty Duty { get; set; }
     }

@@ -12,8 +12,12 @@ namespace ProManager.Core.Models
         Mental,
         Nutritionist
     }
-    public class Coach : Staff
+    public class Coach
     {
+        public Guid Id { get; set; }
+        public Person Person { get; set; }
+        public Team Team { get; set; }
+        public Contract Contract { get; set; }
         public CoachType Type { get; set; }
     }
 }

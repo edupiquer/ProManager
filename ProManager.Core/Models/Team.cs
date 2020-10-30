@@ -10,9 +10,11 @@ namespace ProManager.Core.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [MaxLength(length:100)]
         public string Name { get; set; }
-        public IEnumerable<Staff> Members { get; set; }
+        public List<Coach> Coaches { get; set; }
+        public List<Player> Players { get; set; }
+        public List<Contract> Contracts { get; set; }
     }
 }
