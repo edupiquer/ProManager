@@ -12,5 +12,7 @@ namespace ProManager.Core.Models
         public string LastName { get; set; }
         public string SecondLastName { get; set; }
         public DateTime DateOfBirth { get; set; }
+        [NotMapped]
+        public TimeSpan Age { get => (DateTime.Now - DateOfBirth); }
     }
 }

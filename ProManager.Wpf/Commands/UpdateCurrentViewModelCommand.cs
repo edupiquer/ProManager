@@ -1,4 +1,5 @@
-﻿using ProManager.Wpf.States.Navigators;
+﻿using ProManager.FakePersonData.Services;
+using ProManager.Wpf.States.Navigators;
 using ProManager.Wpf.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace ProManager.Wpf.Commands
                 switch (viewType)
                 {
                     case ViewType.Home:
-                        _navigator.CurrentViewModel = new HomeViewModel();
+                        _navigator.CurrentViewModel = new HomeViewModel(FakePersonViewModel.LoadFakePersonViewModel(new FakePersonService()));
                         break;
                     case ViewType.Teams:
                         _navigator.CurrentViewModel = new TeamsViewModel();

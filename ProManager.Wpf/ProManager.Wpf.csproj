@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProManager.Core\ProManager.Core.csproj" />
     <ProjectReference Include="..\ProManager.EntityFramework\ProManager.EntityFramework.csproj" />
+    <ProjectReference Include="..\ProManager.MockPersonData\ProManager.FakePersonDataAPI.csproj" />
   </ItemGroup>
 
 </Project>
